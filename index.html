@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XRF Elemental Mapping | Bauxite</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="viewer">
+
+        <header>
+
+            <h1>XRF Elemental Mapping</h1>
+
+            <p class="subtitle">
+                Spatial distribution of elements in a bauxite sample
+            </p>
+
+        </header>
+
+
+        <!-- ============================
+             CONTROLS
+        ============================= -->
+
+        <section class="controls">
+
+
+            <!-- ORIGINAL SAMPLE -->
+
+            <div class="control-section">
+
+                <h2>Sample</h2>
+
+                <label class="control-row">
+
+                    <input
+                        type="checkbox"
+                        id="original-toggle"
+                        checked
+                    >
+
+                    <span>Original sample</span>
+
+                </label>
+
+            </div>
+
+
+            <!-- ELEMENTS -->
+
+            <div class="control-section">
+
+                <h2>Select elements</h2>
+
+
+                <!-- Al -->
+
+                <div class="element-control">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="checkbox-Al"
+                        >
+
+                        <span class="element-name">
+                            Al
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="range"
+                        id="slider-Al"
+                        class="opacity-slider"
+                        min="0"
+                        max="1"
+                        step="0.05"
+                        value="0.7"
+                    >
+
+                    <span id="opacity-Al">
+                        70%
+                    </span>
+
+                </div>
+
+
+                <!-- Fe -->
+
+                <div class="element-control">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="checkbox-Fe"
+                        >
+
+                        <span class="element-name">
+                            Fe
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="range"
+                        id="slider-Fe"
+                        class="opacity-slider"
+                        min="0"
+                        max="1"
+                        step="0.05"
+                        value="0.7"
+                    >
+
+                    <span id="opacity-Fe">
+                        70%
+                    </span>
+
+                </div>
+
+
+                <!-- Si -->
+
+                <div class="element-control">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="checkbox-Si"
+                        >
+
+                        <span class="element-name">
+                            Si
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="range"
+                        id="slider-Si"
+                        class="opacity-slider"
+                        min="0"
+                        max="1"
+                        step="0.05"
+                        value="0.7"
+                    >
+
+                    <span id="opacity-Si">
+                        70%
+                    </span>
+
+                </div>
+
+
+                <!-- Ti -->
+
+                <div class="element-control">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="checkbox-Ti"
+                        >
+
+                        <span class="element-name">
+                            Ti
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="range"
+                        id="slider-Ti"
+                        class="opacity-slider"
+                        min="0"
+                        max="1"
+                        step="0.05"
+                        value="0.7"
+                    >
+
+                    <span id="opacity-Ti">
+                        70%
+                    </span>
+
+                </div>
+
+
+                <!-- Ca -->
+
+                <div class="element-control">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="checkbox-Ca"
+                        >
+
+                        <span class="element-name">
+                            Ca
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="range"
+                        id="slider-Ca"
+                        class="opacity-slider"
+                        min="0"
+                        max="1"
+                        step="0.05"
+                        value="0.7"
+                    >
+
+                    <span id="opacity-Ca">
+                        70%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="buttons">
+
+                <button
+                    id="clear-elements"
+                    type="button"
+                >
+                    Clear elements
+                </button>
+
+                <button
+                    id="reset-view"
+                    type="button"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================
+             IMAGE VIEWER
+        ============================= -->
+
+        <section class="image-section">
+
+            <div
+                id="map-container"
+                aria-label="Interactive XRF elemental map"
+            >
+
+                <!-- ORIGINAL BAUXITE -->
+
+                <img
+                    id="original-image"
+                    src="maps/bauxite_original.jpg"
+                    alt="Original bauxite sample"
+                >
+
+
+                <!-- ELEMENTAL MAPS GO HERE -->
+
+                <div id="element-layers"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================
+             DESCRIPTION
+        ============================= -->
+
+        <section class="description">
+
+            <h2>XRF Elemental Mapping</h2>
+
+            <p>
+                X-ray fluorescence imaging provides spatially resolved
+                information on the distribution of elements within the sample.
+                Select one or more elements above to explore their spatial
+                distributions and elemental associations.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
