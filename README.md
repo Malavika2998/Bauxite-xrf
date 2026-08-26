@@ -1,2 +1,0 @@
-# Bauxite-xrf
-elemental mapping
